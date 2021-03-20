@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+import "google/protobuf/struct.proto";
+
+package proto;
+
+// The greeting service definition.
+
+service Greeter {
+  // Sends a greeting
+  rpc put (UserMessage) returns (UserMessage) {}
+  rpc get (UserRequestedKey) returns (UserMessage) {}
+  rpc getAllKeys (Empty) returns (UserList) {}  
+}
+
+// The request message containing key and value.
+message UserMessage {
+  string key = 1;
+  string value = 2;
+}
+
+message UserRequestedKey {
+  string key = 1;
+}
+
+message UserValue {
+  string value = 1;
+}
+
+message UserList {
+  string userMap = 1;
+}
+
+// No args
+message Empty {}
