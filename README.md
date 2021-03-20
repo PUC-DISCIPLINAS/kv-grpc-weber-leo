@@ -13,5 +13,7 @@ Como rodar:
 
   
    `node grpc_client.js put key value`
+   
    `node grpc_client.js get key`
+   
    `node grpc_client.js getAllKeys'
